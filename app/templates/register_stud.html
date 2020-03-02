@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Register</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+           
+
+</head>
+<html>
+<body>
+        
+        <div class="container">
+                <div class="row centered-form">
+                <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <h3 class="panel-title">Student Registration</h3>
+                                 </div>
+                                 <div class="panel-body">
+                                <form role="form" action="register_stud" method="POST">
+                                        {% csrf_token %}
+           
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                    <input type="text" name="first_name" class="form-control input-sm" placeholder="Student Name">
+                                                </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                    <input type="text" name="username" class="form-control input-sm" placeholder="user Name">
+        
+                                                </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="form-group">
+                                            <input type="password" name="password" class="form-control input-sm" placeholder="password">
+                                        </div>
+                                    
+                                        <div class="form-group">
+                                            <input type="email" name="email" class="form-control input-sm" placeholder="Email">
+                                        </div>
+
+                                        
+        
+        
+                                      
+                                    <input type="submit" value="Register" class="btn btn-info btn-block">
+                                
+                                </form>
+        
+                                <div>
+                                        {% for message in messages %}
+                                        <h3>{{message}}</h3>
+                                        {% endfor %}
+                                    </div>
+                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</body>
+
+</html>
